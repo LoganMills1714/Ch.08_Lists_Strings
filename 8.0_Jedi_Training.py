@@ -1,4 +1,4 @@
-# 8.0 Jedi Training (20pts)  Name:________________
+# 8.0 Jedi Training (20pts)  Name:Logan Mills
 
 '''
 1.)  AVERAGE LIST:  (3pts)
@@ -12,6 +12,14 @@ a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
 c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 
+total = 0
+list = a_list
+
+for num in list:
+    total += num
+
+average = total/len(list)
+print(f"Your average is {average:.1f}")
 
 
 '''
@@ -20,7 +28,14 @@ Write a program that will strip the username (whatever is in front of the @ symb
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
 
-
+email = input("Whats your email? ")
+username = ""
+for letter in email:
+    if letter == "@":
+        break
+    else:
+        username += letter
+print(username)
 
 '''
 TEXT FORMATTING:  (4pts)
@@ -34,10 +49,8 @@ TEXT FORMATTING:  (4pts)
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
-
-
+print(f"Score:{score:16}")
+print(f"High score:{highscore:11}")
 '''
 4.) MONTHS PROGRAM   (5pts)
 Write a user-input statement where a user enters a month number 1-12.
@@ -48,6 +61,8 @@ Once the user quits, print "Goodbye!"
 
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
+m=int(input("Enter a month: "))
+print(months[m * 3 - 3 : m * 3])
 
 
 '''
@@ -61,4 +76,15 @@ Extra Challenge: Instead of printing out 41 lines of text to look at, can you de
 along with the shift number?
 '''
 Secret_Message="Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
+storedArray = []
+
+for item in Secret_Message:
+    storedArray.append(ord(item))  # Store the items in the array in ordinate format
+
+for x in range(0, 41):
+    x -= 20
+    print("\n")
+    for y in storedArray:
+        num = y - x
+        print(chr(num), end="")
 
